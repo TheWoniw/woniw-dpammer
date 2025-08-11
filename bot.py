@@ -27,15 +27,19 @@ def random_dely_model_2():
 
 
 def user_inputs():
-    message = str(input(f"{RED}Enter message:"))
-    final_message = f"{message}"
-    data['user_message'] = final_message
+    print("|---- ENTER MESSAGE ----|")
+    message = str(input(f"||$||: "))
+    data['user_message'] = message
+
+    data['user_message'] = message
     save_json(data, json_path)
 
-    return final_message
+
+    return message
     
 def find_cycles():
-    cycles = int(input(f"{RED}How many cycles would you like to spam: "))
+    print("|---- ENTER AMOUNT OF CYCLES ----|")
+    cycles = int(input(f"||$||: "))
     return cycles
 
 def start_cycles(cycles, spam_message):
@@ -57,7 +61,7 @@ def start_cycles(cycles, spam_message):
         time.sleep(final_random_dely_time_model_2)
         pag.hotkey("enter")
 
-        if I == cycle:
+        if I == cycles:
             pag.write(end_message_completed_cycles)
             pag.hotkey("enter")
             time.sleep(1)
@@ -70,12 +74,18 @@ def start_cycles(cycles, spam_message):
             pag.write(end_message_3)
             pag.hotkey("enter")
 
-cycle = find_cycles()
-time.sleep(1)
-spam_message = user_inputs()
-time.sleep(5)
-print(f"{GREEN}|----- LOGS -----|")
-start_cycles(cycle, spam_message)
 
+def main():
+    cycle = find_cycles()
+    print("")
+    time.sleep(1)
+    print("")
+    spam_message = user_inputs()
+    time.sleep(5)
+    print(f"{GREEN}|----- LOGS -----|")
+    start_cycles(cycle, spam_message)
+
+
+main()
 #TODO
 # - Lock onto discord message

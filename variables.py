@@ -1,6 +1,6 @@
 from json_management.json_functions import load_json
  
-json_path = "/home/woniw/Desktop/discord_spam_bot/json_management/data.json"
+json_path = "/home/woniw/Desktop/woniw_dpammer/json_management/data.json"
 data = load_json(json_path)
 
 
